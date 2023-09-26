@@ -97,7 +97,7 @@ class LoginPage extends StatelessWidget {
                         //   return const HomePage();
                         // }));
                         // Navigator.of(context).pushNamed('/home');
-                        Navigator.of(context).pushReplacementNamed('/main');
+                        Navigator.of(context).pushReplacementNamed('/test');
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: const Color.fromARGB(255, 3, 145, 11),
