@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:mynotes/pages/home_page.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -97,7 +96,8 @@ class LoginPage extends StatelessWidget {
                         //     .push(MaterialPageRoute(builder: (context) {
                         //   return const HomePage();
                         // }));
-                        Navigator.of(context).pushNamed('/home');
+                        // Navigator.of(context).pushNamed('/home');
+                        Navigator.of(context).pushReplacementNamed('/home');
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: const Color.fromARGB(255, 3, 145, 11),
