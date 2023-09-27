@@ -17,15 +17,16 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
           fontFamily: 'Urbanist',
-          scaffoldBackgroundColor: AppColors.background),
-      home: TestPage(),
-      // initialRoute: '/',
-      // routes: {
-      //   '/': (context) => const LoginPage(),
-      //   '/home': (context) => const HomePage(),
-      //   '/main': (context) => const MainPage(),
-      //   '/test': (context) => const TestPage(),
-      // },
+          scaffoldBackgroundColor: AppColors.background,
+          brightness: Brightness.dark),
+      // home: TestPage(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const LoginPage(),
+        '/home': (context) => HomePage(),
+        '/main': (context) => const MainPage(),
+        '/test': (context) => const TestPage(),
+      },
     );
   }
 }
