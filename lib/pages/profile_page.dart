@@ -1,19 +1,74 @@
 import 'package:flutter/material.dart';
+import 'package:mynotes/components/header_bar.dart';
 import 'package:mynotes/styles/app_text.dart';
+
+enum ProfileMenu { edit, logout }
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
 
+  void handledProfileMenuSelected(ProfileMenu value) {
+    switch (value) {
+      case ProfileMenu.edit:
+        print('1');
+        break;
+      case ProfileMenu.logout:
+        print('2');
+        break;
+    }
+  }
+
+  List<PopupMenuItem<ProfileMenu>> buildProfileMenuItems(BuildContext context) {
+    return [
+      const PopupMenuItem(
+          value: ProfileMenu.edit,
+          // onTap: () => {},
+          child: Row(
+            children: [
+              Icon(Icons.edit),
+              SizedBox(
+                width: 9,
+              ),
+              Text('Edit'),
+            ],
+          )),
+      const PopupMenuItem(
+          // onTap:()=>{},
+          value: ProfileMenu.logout,
+          child: Row(
+            children: [
+              Icon(Icons.logout),
+              SizedBox(
+                width: 9,
+              ),
+              Text('LogOut'),
+            ],
+          )),
+    ];
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: HeaderBar(
+        title: "Profile",
+        actions: [
+          PopupMenuButton<ProfileMenu>(
+            onSelected: (value) => handledProfileMenuSelected(value),
+            itemBuilder: (context) => buildProfileMenuItems(context),
+            icon: const Icon(Icons.more_vert_rounded),
+          )
+          // IconButton(
+          //     onPressed: () {}, icon: const Icon(Icons.more_vert_outlined))
+        ],
+      ),
       body: Column(children: [
         Image.asset(
           'assets/temp/user1.png',
           width: 90,
           height: 90,
         ),
-        SizedBox(
+        const SizedBox(
           height: 12,
         ),
         const Text(
@@ -24,7 +79,7 @@ class ProfilePage extends StatelessWidget {
           "Her Other Name",
           style: AppText.subtitle3,
         ),
-        SizedBox(
+        const SizedBox(
           height: 12,
         ),
         const Row(
