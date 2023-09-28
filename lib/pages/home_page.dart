@@ -15,7 +15,7 @@ class HomePage extends StatelessWidget {
         // elevation: 0,
         title: const Text("W D"),
         centerTitle: false,
-        actions: const [Icon(Icons.mail_outline), Icon(Icons.chat_rounded)],
+        actions: const [Icon(Icons.chat_rounded)],
       ),
       body: ListView.separated(
         itemBuilder: (context, index) {

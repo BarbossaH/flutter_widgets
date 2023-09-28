@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mynotes/pages/home_page.dart';
 import 'package:mynotes/pages/login_page.dart';
 import 'package:mynotes/pages/main_page.dart';
+import 'package:mynotes/pages/profile_page.dart';
 import 'package:mynotes/pages/test_page.dart';
 import 'package:mynotes/styles/app_colors.dart';
 
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
         '/home': (context) => HomePage(),
         '/main': (context) => const MainPage(),
         '/test': (context) => const TestPage(),
+        '/profile': (context) => const ProfilePage(),
       },
     );
   }

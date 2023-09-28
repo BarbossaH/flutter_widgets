@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:mynotes/pages/home_page.dart';
+import 'package:mynotes/pages/profile_page.dart';
 import 'package:mynotes/styles/app_colors.dart';
 
 class MainPage extends StatefulWidget {
@@ -76,8 +77,6 @@ class _MainPageState extends State<MainPage> {
     Center(
       child: Text("3", style: TextStyle(color: Colors.white)),
     ),
-    Center(
-      child: Text("4", style: TextStyle(color: Colors.white)),
-    ),
+    ProfilePage()
   ];
 }
