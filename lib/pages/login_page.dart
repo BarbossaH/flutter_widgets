@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mynotes/components/text_field.dart';
+import 'package:mynotes/config/app_strings.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -28,7 +29,7 @@ class LoginPage extends StatelessWidget {
                 // ),
                 const Spacer(),
                 const Text(
-                  'Hello Welcome Back',
+                  AppStrings.hello,
                   style: TextStyle(
                     color: Color.fromARGB(255, 3, 145, 11),
                     fontSize: 22,
@@ -39,7 +40,7 @@ class LoginPage extends StatelessWidget {
                   height: 12,
                 ),
                 const Text(
-                  'Login to continue',
+                  AppStrings.loginToContinue,
                   style: TextStyle(
                       color: Colors.white,
                       fontSize: 18,
@@ -49,11 +50,11 @@ class LoginPage extends StatelessWidget {
                 //   height: 120,
                 // ),
                 const Spacer(),
-                const AppTextField(hint: "UserName"),
+                const AppTextField(hint: AppStrings.username),
                 const SizedBox(
                   height: 9,
                 ),
-                const AppTextField(hint: "Password"),
+                const AppTextField(hint: AppStrings.password),
                 const SizedBox(
                   height: 9,
                 ),
@@ -65,7 +66,7 @@ class LoginPage extends StatelessWidget {
                       },
                       style:
                           TextButton.styleFrom(foregroundColor: Colors.white),
-                      child: const Text('Forgot password')),
+                      child: const Text(AppStrings.forgotPassword)),
                 ),
                 const SizedBox(
                   height: 30,
@@ -88,7 +89,7 @@ class LoginPage extends StatelessWidget {
                         foregroundColor: Colors.white,
                       ),
                       child: const Text(
-                        'Login',
+                        AppStrings.signUp,
                         style: TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 18),
                       )),
@@ -98,7 +99,7 @@ class LoginPage extends StatelessWidget {
                 // ),
                 const Spacer(),
                 const Text(
-                  'Or sign in with',
+                  AppStrings.orSignInWith,
                   style: TextStyle(color: Colors.white),
                 ),
                 const SizedBox(
@@ -127,7 +128,7 @@ class LoginPage extends StatelessWidget {
                           const SizedBox(
                             width: 9,
                           ),
-                          const Text('Login with Google'),
+                          const Text(AppStrings.loginWithGoogle),
                         ],
                       )),
                 ),
@@ -151,7 +152,7 @@ class LoginPage extends StatelessWidget {
                             height: 24,
                           ),
                           const SizedBox(width: 18),
-                          const Text('Login with Facebook')
+                          const Text(AppStrings.loginWithFacebook)
                         ],
                       )),
                 ),
@@ -159,7 +160,7 @@ class LoginPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     const Text(
-                      "Don't have an account",
+                      AppStrings.noAccount,
                       style: TextStyle(color: Colors.white),
                     ),
                     TextButton(
@@ -167,7 +168,7 @@ class LoginPage extends StatelessWidget {
                         style:
                             TextButton.styleFrom(foregroundColor: Colors.red),
                         child: const Text(
-                          'Sign Up',
+                          AppStrings.signUp,
                           style:
                               TextStyle(decoration: TextDecoration.underline),
                         )),

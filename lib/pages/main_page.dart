@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:mynotes/config/app_strings.dart';
 import 'package:mynotes/pages/home_page.dart';
 import 'package:mynotes/pages/profile_page.dart';
 import 'package:mynotes/styles/app_colors.dart';
@@ -24,20 +25,22 @@ class _MainPageState extends State<MainPage> {
       bottomNavigationBar: BottomNavigationBar(
         items: [
           BottomNavigationBarItem(
-              icon: SvgPicture.asset('assets/svg/ic_home.svg'), label: 'Home'),
+              icon: SvgPicture.asset('assets/svg/ic_home.svg'),
+              label: AppStrings.home),
 
           BottomNavigationBarItem(
               icon: SvgPicture.asset('assets/svg/ic_favorite.svg'),
-              label: 'Favorite'),
+              label: AppStrings.favorites),
 
           BottomNavigationBarItem(
               icon: SvgPicture.asset('assets/svg/ic_add.svg'),
-              label: 'Add Post'),
+              label: AppStrings.add),
           BottomNavigationBarItem(
               icon: SvgPicture.asset('assets/svg/ic_messages.svg'),
-              label: 'Message'),
+              label: AppStrings.messages),
           BottomNavigationBarItem(
-              icon: SvgPicture.asset('assets/svg/ic_user.svg'), label: 'User'),
+              icon: SvgPicture.asset('assets/svg/ic_user.svg'),
+              label: AppStrings.user),
 
           // BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           // BottomNavigationBarItem(

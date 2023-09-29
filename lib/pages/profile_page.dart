@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mynotes/components/header_bar.dart';
+import 'package:mynotes/config/app_strings.dart';
 import 'package:mynotes/styles/app_text.dart';
 
 enum ProfileMenu { edit, logout }
@@ -29,7 +30,7 @@ class ProfilePage extends StatelessWidget {
               SizedBox(
                 width: 9,
               ),
-              Text('Edit'),
+              Text(AppStrings.edit),
             ],
           )),
       const PopupMenuItem(
@@ -41,7 +42,7 @@ class ProfilePage extends StatelessWidget {
               SizedBox(
                 width: 9,
               ),
-              Text('LogOut'),
+              Text(AppStrings.logOut),
             ],
           )),
     ];
@@ -94,7 +95,7 @@ class ProfilePage extends StatelessWidget {
                   "123",
                   style: AppText.header2,
                 ),
-                Text('Followers')
+                Text(AppStrings.followers)
               ],
             ),
             Column(
@@ -103,7 +104,7 @@ class ProfilePage extends StatelessWidget {
                   "88",
                   style: AppText.header2,
                 ),
-                Text('Posts')
+                Text(AppStrings.posts)
               ],
             ),
             Column(
@@ -112,7 +113,7 @@ class ProfilePage extends StatelessWidget {
                   "2133",
                   style: AppText.header2,
                 ),
-                Text('Following')
+                Text(AppStrings.following)
               ],
             ),
           ],

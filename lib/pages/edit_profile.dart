@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mynotes/components/header_bar.dart';
 import 'package:mynotes/components/text_field.dart';
+import 'package:mynotes/config/app_strings.dart';
 
 class EditProfile extends StatelessWidget {
   const EditProfile({super.key});
@@ -8,19 +9,19 @@ class EditProfile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      appBar: HeaderBar(title: "Edit Profile"),
+      appBar: HeaderBar(title: AppStrings.editProfile),
       body: Column(children: [
         AppTextField(
-          hint: "First Name",
+          hint: AppStrings.firstName,
         ),
         AppTextField(
-          hint: "Last Name",
+          hint: AppStrings.lastName,
         ),
         AppTextField(
-          hint: "Phone Number",
+          hint: AppStrings.phoneNumber,
         ),
         AppTextField(
-          hint: "Location",
+          hint: AppStrings.location,
         ),
       ]),
     );

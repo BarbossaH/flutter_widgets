@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:mynotes/components/header_bar.dart';
 import 'package:mynotes/components/post_item.dart';
+import 'package:mynotes/config/app_strings.dart';
 
 List<String> users = [];
 
@@ -12,7 +13,7 @@ class HomePage extends StatelessWidget {
     mockUsersFromServer();
     return Scaffold(
       appBar: HeaderBar(
-        title: 'W D',
+        title: AppStrings.appName,
         actions: [
           IconButton(
               onPressed: () {},
