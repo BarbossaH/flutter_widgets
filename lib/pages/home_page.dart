@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:mynotes/components/header_bar.dart';
 import 'package:mynotes/components/post_item.dart';
+import 'package:mynotes/config/app_icons.dart';
 import 'package:mynotes/config/app_strings.dart';
 
 List<String> users = [];
@@ -16,8 +17,7 @@ class HomePage extends StatelessWidget {
         title: AppStrings.appName,
         actions: [
           IconButton(
-              onPressed: () {},
-              icon: SvgPicture.asset('assets/svg/ic_location.svg'))
+              onPressed: () {}, icon: SvgPicture.asset(AppIcons.icLocation))
         ],
       ),
       body: ListView.separated(
