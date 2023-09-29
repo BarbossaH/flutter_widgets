@@ -7,10 +7,10 @@ enum ProfileMenu { edit, logout }
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
 
-  void handledProfileMenuSelected(ProfileMenu value) {
+  void handledProfileMenuSelected(ProfileMenu value, BuildContext context) {
     switch (value) {
       case ProfileMenu.edit:
-        print('1');
+        Navigator.of(context).pushNamed('/edit_profile');
         break;
       case ProfileMenu.logout:
         print('2');
@@ -54,7 +54,7 @@ class ProfilePage extends StatelessWidget {
         title: "Profile",
         actions: [
           PopupMenuButton<ProfileMenu>(
-            onSelected: (value) => handledProfileMenuSelected(value),
+            onSelected: (value) => handledProfileMenuSelected(value, context),
             itemBuilder: (context) => buildProfileMenuItems(context),
             icon: const Icon(Icons.more_vert_rounded),
           )
@@ -63,10 +63,13 @@ class ProfilePage extends StatelessWidget {
         ],
       ),
       body: Column(children: [
-        Image.asset(
-          'assets/temp/user1.png',
-          width: 90,
-          height: 90,
+        ClipRRect(
+          borderRadius: const BorderRadius.all(Radius.circular(18)),
+          child: Image.asset(
+            'assets/temp/user1.png',
+            width: 90,
+            height: 90,
+          ),
         ),
         const SizedBox(
           height: 12,

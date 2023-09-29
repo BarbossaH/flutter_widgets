@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mynotes/components/text_field.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -48,30 +49,13 @@ class LoginPage extends StatelessWidget {
                 //   height: 120,
                 // ),
                 const Spacer(),
-                TextField(
-                  decoration: InputDecoration(
-                    hintText: 'Enter Username',
-                    // border: InputBorder.none,
-                    border: const OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(18)),
-                    ),
-                    filled: true,
-                    fillColor: Colors.white.withOpacity(0.5),
-                  ),
-                ),
+                const AppTextField(hint: "UserName"),
                 const SizedBox(
                   height: 9,
                 ),
-                TextField(
-                  decoration: InputDecoration(
-                    hintText: 'Enter Password',
-                    // border: InputBorder.none,
-                    border: const OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(18)),
-                    ),
-                    filled: true,
-                    fillColor: Colors.white.withOpacity(0.5),
-                  ),
+                const AppTextField(hint: "Password"),
+                const SizedBox(
+                  height: 9,
                 ),
                 Align(
                   alignment: Alignment.centerRight,
@@ -188,17 +172,6 @@ class LoginPage extends StatelessWidget {
                               TextStyle(decoration: TextDecoration.underline),
                         )),
                   ],
-                ),
-                TextField(
-                  decoration: InputDecoration(
-                    hintText: 'Enter Username',
-                    // border: InputBorder.none,
-                    border: const OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(18)),
-                    ),
-                    filled: true,
-                    fillColor: Colors.white.withOpacity(0.5),
-                  ),
                 ),
               ],
             ),

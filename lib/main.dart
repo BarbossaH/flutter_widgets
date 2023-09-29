@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mynotes/pages/edit_profile.dart';
 import 'package:mynotes/pages/home_page.dart';
 import 'package:mynotes/pages/login_page.dart';
 import 'package:mynotes/pages/main_page.dart';
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
         '/main': (context) => const MainPage(),
         '/test': (context) => const TestPage(),
         '/profile': (context) => const ProfilePage(),
+        '/edit_profile': (context) => const EditProfile(),
       },
     );
   }

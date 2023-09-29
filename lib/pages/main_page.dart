@@ -63,7 +63,7 @@ class _MainPageState extends State<MainPage> {
     );
   }
 
-  final pages = [
+  final pages = const [
     HomePage(),
     Center(
       child: Text(
