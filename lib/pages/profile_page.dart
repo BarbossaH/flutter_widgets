@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mynotes/components/header_bar.dart';
+import 'package:mynotes/components/user_avatar.dart';
 import 'package:mynotes/config/app_strings.dart';
 import 'package:mynotes/styles/app_text.dart';
 
@@ -63,30 +64,28 @@ class ProfilePage extends StatelessWidget {
           //     onPressed: () {}, icon: const Icon(Icons.more_vert_outlined))
         ],
       ),
-      body: Column(children: [
-        ClipRRect(
-          borderRadius: const BorderRadius.all(Radius.circular(18)),
-          child: Image.asset(
-            'assets/temp/user1.png',
-            width: 90,
-            height: 90,
-          ),
-        ),
-        const SizedBox(
+      body: const Column(children: [
+        SizedBox(
           height: 12,
         ),
-        const Text(
+        UserAvatar(
+          size: 90,
+        ),
+        SizedBox(
+          height: 12,
+        ),
+        Text(
           "Her Name",
           style: AppText.header2,
         ),
-        const Text(
+        Text(
           "Her Other Name",
           style: AppText.subtitle3,
         ),
-        const SizedBox(
+        SizedBox(
           height: 12,
         ),
-        const Row(
+        Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Column(
@@ -118,7 +117,7 @@ class ProfilePage extends StatelessWidget {
             ),
           ],
         ),
-        const Divider(
+        Divider(
           thickness: 1,
           height: 30,
           // indent: 30,

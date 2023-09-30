@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mynotes/components/user_avatar.dart';
 import 'package:mynotes/styles/app_text.dart';
 
 class PostItem extends StatelessWidget {
@@ -16,10 +17,9 @@ class PostItem extends StatelessWidget {
         children: [
           Row(
             children: [
-              Image.asset(
-                'assets/temp/user1.png',
-                width: 60,
-                height: 60,
+              const UserAvatar(
+                size: 60,
+                radius: 12,
               ),
               const SizedBox(
                 width: 9,
