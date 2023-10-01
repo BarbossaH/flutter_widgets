@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:mynotes/components/bottom_nav_item.dart';
 import 'package:mynotes/config/app_enum.dart';
 import 'package:mynotes/config/app_icons.dart';
 import 'package:mynotes/pages/home_page.dart';
@@ -112,63 +113,47 @@ class MyBottomNavigation extends StatelessWidget {
                   borderRadius: BorderRadius.all(Radius.circular(25))),
               child: Row(
                 children: [
-                  Expanded(
-                      child: IconButton(
-                    icon: SvgPicture.asset(
-                      AppIcons.icHome,
-                      colorFilter: ColorFilter.mode(
-                          curIndex == Menus.home
-                              ? Colors.black
-                              : Colors.black.withOpacity(0.3),
-                          BlendMode.srcIn),
-                    ),
-                    onPressed: () {
-                      onTap(Menus.home);
-                    },
-                  )),
-                  Expanded(
-                      child: IconButton(
-                    icon: SvgPicture.asset(
-                      AppIcons.icFavorite,
-                      colorFilter: ColorFilter.mode(
-                          curIndex == Menus.favorite
-                              ? Colors.black
-                              : Colors.black.withOpacity(0.3),
-                          BlendMode.srcIn),
-                    ),
-                    onPressed: () {
-                      onTap(Menus.favorite);
-                    },
-                  )),
+                  MyBottomNavItem(
+                    iconSvg: AppIcons.icHome,
+                    curIndex: curIndex,
+                    itemName: Menus.home,
+                    onPressed: () => onTap(Menus.home),
+                  ),
+                  // Expanded(
+                  //     child: IconButton(
+                  //   icon: SvgPicture.asset(
+                  //     AppIcons.icHome,
+                  //     colorFilter: ColorFilter.mode(
+                  //         curIndex == Menus.home
+                  //             ? Colors.black
+                  //             : Colors.black.withOpacity(0.3),
+                  //         BlendMode.srcIn),
+                  //   ),
+                  //   onPressed: () {
+                  //     onTap(Menus.home);
+                  //   },
+                  // )),
+                  MyBottomNavItem(
+                    iconSvg: AppIcons.icFavorite,
+                    curIndex: curIndex,
+                    itemName: Menus.favorite,
+                    onPressed: () => onTap(Menus.favorite),
+                  ),
+
                   const Spacer(),
-                  Expanded(
-                      child: IconButton(
-                    icon: SvgPicture.asset(
-                      AppIcons.icMessage,
-                      colorFilter: ColorFilter.mode(
-                          curIndex == Menus.messages
-                              ? Colors.black
-                              : Colors.black.withOpacity(0.3),
-                          BlendMode.srcIn),
-                    ),
-                    onPressed: () {
-                      onTap(Menus.messages);
-                    },
-                  )),
-                  Expanded(
-                      child: IconButton(
-                    icon: SvgPicture.asset(
-                      AppIcons.icUser,
-                      colorFilter: ColorFilter.mode(
-                          curIndex == Menus.user
-                              ? Colors.black
-                              : Colors.black.withOpacity(0.3),
-                          BlendMode.srcIn),
-                    ),
-                    onPressed: () {
-                      onTap(Menus.user);
-                    },
-                  )),
+                  MyBottomNavItem(
+                    iconSvg: AppIcons.icMessage,
+                    curIndex: curIndex,
+                    itemName: Menus.messages,
+                    onPressed: () => onTap(Menus.messages),
+                  ),
+
+                  MyBottomNavItem(
+                    iconSvg: AppIcons.icUser,
+                    curIndex: curIndex,
+                    itemName: Menus.user,
+                    onPressed: () => onTap(Menus.user),
+                  ),
                 ],
               ),
             ),
@@ -187,11 +172,8 @@ class MyBottomNavigation extends StatelessWidget {
                 padding: const EdgeInsets.all(12),
                 child: SvgPicture.asset(
                   AppIcons.icAdd,
-                  colorFilter: ColorFilter.mode(
-                      curIndex == Menus.add
-                          ? Colors.white
-                          : Colors.white.withOpacity(0.3),
-                      BlendMode.srcIn),
+                  colorFilter:
+                      const ColorFilter.mode(Colors.white, BlendMode.srcIn),
                 ),
               ),
             ),
