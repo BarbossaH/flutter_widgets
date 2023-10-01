@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:mynotes/components/header_bar.dart';
 import 'package:mynotes/components/user_avatar.dart';
 import 'package:mynotes/config/app_strings.dart';
+import 'package:mynotes/model/user.dart';
 import 'package:mynotes/styles/app_text.dart';
 
 enum ProfileMenu { edit, logout }
 
 class ProfilePage extends StatelessWidget {
-  const ProfilePage({super.key});
+  final User user;
+  const ProfilePage({super.key, required this.user});
 
   void handledProfileMenuSelected(ProfileMenu value, BuildContext context) {
     switch (value) {
@@ -64,7 +66,7 @@ class ProfilePage extends StatelessWidget {
           //     onPressed: () {}, icon: const Icon(Icons.more_vert_outlined))
         ],
       ),
-      body: const Column(children: [
+      body: Column(children: [
         SizedBox(
           height: 12,
         ),
@@ -75,7 +77,7 @@ class ProfilePage extends StatelessWidget {
           height: 12,
         ),
         Text(
-          "Her Name",
+          "${user.id} ${user.firstName} ${user.lastName}",
           style: AppText.header2,
         ),
         Text(

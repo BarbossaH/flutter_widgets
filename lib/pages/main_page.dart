@@ -3,12 +3,14 @@ import 'package:flutter_svg/svg.dart';
 import 'package:mynotes/components/bottom_nav_item.dart';
 import 'package:mynotes/config/app_enum.dart';
 import 'package:mynotes/config/app_icons.dart';
+import 'package:mynotes/model/user.dart';
 import 'package:mynotes/pages/home_page.dart';
 import 'package:mynotes/pages/profile_page.dart';
 import 'package:mynotes/styles/app_colors.dart';
 
 class MainPage extends StatefulWidget {
-  const MainPage({super.key});
+  final User user;
+  const MainPage({super.key, required this.user});
 
   @override
   State<MainPage> createState() => _MainPageState();
@@ -20,7 +22,7 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         extendBody: true,
-        body: pages[currentIndex.index],
+        body: pages()[currentIndex.index],
         // body: const Center(child: Text('Center Text')),
         bottomNavigationBar: MyBottomNavigation(
           curIndex: currentIndex,
@@ -69,22 +71,42 @@ class _MainPageState extends State<MainPage> {
         );
   }
 
-  final pages = const [
-    HomePage(),
-    Center(
-      child: Text(
-        "1",
-        style: TextStyle(color: Colors.white),
-      ),
-    ),
-    Center(
-      child: Text("2", style: TextStyle(color: Colors.white)),
-    ),
-    Center(
-      child: Text("3", style: TextStyle(color: Colors.white)),
-    ),
-    ProfilePage()
-  ];
+  // final pages = [
+  //   HomePage(),
+  //   Center(
+  //     child: Text(
+  //       "1",
+  //       style: TextStyle(color: Colors.white),
+  //     ),
+  //   ),
+  //   Center(
+  //     child: Text("2", style: TextStyle(color: Colors.white)),
+  //   ),
+  //   Center(
+  //     child: Text("3", style: TextStyle(color: Colors.white)),
+  //   ),
+  //   ProfilePage(
+  //     user: widget.user,
+  //   )
+  // ];
+  pages() => [
+        HomePage(),
+        Center(
+          child: Text(
+            "1",
+            style: TextStyle(color: Colors.white),
+          ),
+        ),
+        Center(
+          child: Text("2", style: TextStyle(color: Colors.white)),
+        ),
+        Center(
+          child: Text("3", style: TextStyle(color: Colors.white)),
+        ),
+        ProfilePage(
+          user: widget.user,
+        )
+      ];
 }
 
 class MyBottomNavigation extends StatelessWidget {

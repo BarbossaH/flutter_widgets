@@ -10,6 +10,7 @@ class AppStrings {
   static const loginWithFacebook = "Login with Facebook";
   static const noAccount = "Don't have account";
   static const signUp = "Sign up";
+  static const login = "Login";
   static const home = "Home";
   static const favorites = "Favorites";
   static const add = "Add";
