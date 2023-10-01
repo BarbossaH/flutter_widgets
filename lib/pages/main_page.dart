@@ -19,9 +19,7 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        // appBar: AppBar(
-        //   title: const Text('Bottom Navigation Container'),
-        // ),
+        extendBody: true,
         body: pages[currentIndex.index],
         // body: const Center(child: Text('Center Text')),
         bottomNavigationBar: MyBottomNavigation(
